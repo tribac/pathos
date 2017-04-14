@@ -1,6 +1,6 @@
 import 'mocha';
 import * as chai from 'chai';
-import { Name } from '../src/Name';
+import { Name } from '../lib/Name';
 
 const expect = chai.expect;
 

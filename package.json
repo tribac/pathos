@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev-test-watch": "mocha-typescript-watch",
-    "pretest": "tsc --module commonjs --target ES5 --outDir dist test/*.ts",
+    "pretest": "tsc",
     "test": "mocha"
   },
   "author": "",

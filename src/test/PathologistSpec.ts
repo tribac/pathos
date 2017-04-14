@@ -1,4 +1,4 @@
-import { Pathologist } from '../src/Pathologist';
+import { Pathologist } from '../lib/Pathologist';
 import * as chai from 'chai';
 const expect = chai.expect;
 describe('Pathologist', function() {
