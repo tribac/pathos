@@ -1,0 +1,15 @@
+[
+    {"name":{"given": "Guy", "family": "Allaire"}},
+    {"name":{"given": "Danielle", "family": "Bouffard"}},
+    {"name":{"given": "Louis", "family": "Gaboury"}},
+    {"name":{"given": "Olguta Ecaterina", "family": "Gologan"}},
+    {"name":{"given": "François", "family": "Gougeon"}},
+    {"name":{"given": "Mathieu ", "family": "Latour"}},
+    {"name":{"given": "Antonio", "family": "Maietta"}},
+    {"name":{"given": "Bich", "family": "Nguyen"}},
+    {"name":{"given": "Kurosh", "family": "Rahimi"}},
+    {"name":{"given": "Philippe", "family": "Roméo"}},
+    {"name":{"given": "Lili Maria", "family": "Sanchez"}},
+    {"name":{"given": "Danh", "family": "Tran Thanh"}},
+    {"name":{"given": "Dominique", "family": "Trudel"}}
+]

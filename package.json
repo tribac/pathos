@@ -1,0 +1,26 @@
+{
+  "name": "pathochonos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-test-watch": "mocha-typescript-watch",
+    "pretest": "tsc --module commonjs --target ES5 --outDir dist test/*.ts",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^3.5.0",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.12",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mocha-typescript": "^1.0.23"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  }
+}

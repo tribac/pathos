@@ -1,0 +1,4 @@
+--compiler ts:ts-node/register
+--module commonjs
+--
+dist/test/*.js
