@@ -1,5 +1,5 @@
-import { Name } from './Name';
-const pathologists: Pathologist[] = require('../../config/pathologists.json');
+import { PersonName } from './PersonName';
+const pathologists: Pathologist[] = [];
 
 export class Pathologist {
 
@@ -14,7 +14,11 @@ export class Pathologist {
         return result;
     }
 
-    constructor(public name: Name) {
+    constructor(public name: PersonName) {
     }
 
 }
+
+require('../../config/pathologists.json').forEach(element => {
+    pathologists.push(new Pathologist(new PersonName(element.name.given, element.name.family)));
+});

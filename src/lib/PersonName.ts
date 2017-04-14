@@ -1,5 +1,5 @@
 
-export class Name {
+export class PersonName {
 
     public static initialsOf(names: string[]): string {
         let result = '';
@@ -9,8 +9,8 @@ export class Name {
         return result;
     }
 
-    constructor(public given: string,
-                public family: string) {
+    constructor(public given?: string,
+                public family?: string) {
     }
 
     public get full(): string {
@@ -18,7 +18,7 @@ export class Name {
     }
 
     public get initials(): string {
-        return Name.initialsOf([
+        return PersonName.initialsOf([
                     ...this.given.split(' '),
                     ...this.family.split(' ')]);
     }
