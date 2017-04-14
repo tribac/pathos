@@ -11,15 +11,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bunyan": "0.0.36",
     "@types/chai": "^3.5.0",
     "@types/mocha": "^2.2.40",
     "@types/node": "^7.0.12",
     "chai": "^3.5.0",
+    "lodash": "^4.17.4",
     "mocha": "^3.2.0",
     "mocha-typescript": "^1.0.23"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
+    "bunyan": "^1.8.10",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.2"
   }

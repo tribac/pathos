@@ -10,7 +10,7 @@ describe('Pathologist', function() {
         console.log(JSON.stringify(all));
         console.log(all[0].name);
     });
-    it('should load all pathologists from "config/pathlogists.json"', function() {
+    it('should load all pathologists from "../../config/pathlogists.json"', function() {
         // console.log(Pathologist.byInitials('BN'));
         expect(Pathologist.byInitials('BN').name.initials).to.eq('BN');
     });

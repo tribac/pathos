@@ -11,5 +11,11 @@
     {"name":{"given": "Philippe", "family": "Roméo"}},
     {"name":{"given": "Lili Maria", "family": "Sanchez"}},
     {"name":{"given": "Danh", "family": "Tran Thanh"}},
-    {"name":{"given": "Dominique", "family": "Trudel"}}
+    {"name":{"given": "Dominique", "family": "Trudel"}},
+    {"name":{"given": "A", "family": "B"}},
+    {"name":{"given": "A M", "family": "T"}},
+    {"name":{"given": "C", "family": "L"}},
+    {"name":{"given": "F", "family": "B"}},
+    {"name":{"given": "M", "family": "H"}},
+    {"name":{"given": "P", "family": "S"}}    
 ]
