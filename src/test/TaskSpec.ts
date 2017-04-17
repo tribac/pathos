@@ -1,6 +1,6 @@
 import { Task } from '../lib/Task';
-import * as chai from 'chai';
-const expect = chai.expect;
+import {expect} from 'chai';
+
 describe('Task', function() {
     it('should load all tasks from ../../config/tasks.json', function() {
         let task = Task.byCode('NEURO');

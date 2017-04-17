@@ -1,7 +1,5 @@
 import 'mocha';
-import * as chai from 'chai';
-
-const expect = chai.expect;
+import {expect} from 'chai';
 
 describe('canary', function() {
     it('should pass', function() {

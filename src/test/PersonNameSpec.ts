@@ -1,8 +1,6 @@
 import 'mocha';
-import * as chai from 'chai';
+import {expect} from 'chai';
 import { PersonName } from '../lib/PersonName';
-
-const expect = chai.expect;
 
 describe('PersonName', function() {
     let testable: PersonName;
