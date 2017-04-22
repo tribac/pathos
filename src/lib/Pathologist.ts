@@ -1,11 +1,24 @@
 import { PersonName } from './PersonName';
 import * as bunyan from 'bunyan';
 
-const byInitials: {[initials: string]: Pathologist} = {};
+export type ByInitials = {[initials: string]: Pathologist};
+
+const byInitials: ByInitials = {};
 
 const logger = bunyan.createLogger({name: 'Pathologist', level: 'debug'});
 
+// declare function pick<T, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K>;
+
 export class Pathologist {
+
+    public static allByInitials(): ByInitials {
+        // return pick(byInitials, ...Object.keys(byInitials));
+        let result: ByInitials = {};
+        Object.keys(byInitials).forEach(function(initials) {
+            result[initials] = byInitials[initials];
+        });
+        return result;
+    }
 
     public static byInitials(initials: string): Pathologist {
         return byInitials[initials];
@@ -15,7 +28,15 @@ export class Pathologist {
         return Object.keys(byInitials);
     }
 
-    constructor(public name: PersonName) {
+    public static all(): Pathologist[] {
+        let result: Pathologist[] = [];
+        Object.keys(byInitials).forEach(function(initials) {
+            result.push(byInitials[initials]);
+        });
+        return result;
+    }
+
+    constructor(public name: PersonName, public tasks: string[] = []) {
     }
 }
 

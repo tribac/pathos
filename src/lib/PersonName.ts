@@ -9,8 +9,8 @@ export class PersonName {
         return result;
     }
 
-    constructor(public given?: string,
-                public family?: string) {
+    constructor(public given: string,
+                public family: string) {
     }
 
     public get full(): string {

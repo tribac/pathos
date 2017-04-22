@@ -20,6 +20,8 @@ export class Task {
         return Object.keys(byName);
     }
 
+    public pathologists: string[] = [];
+
     constructor(public name: string,
                 public code: string,
                 public weight: number,
@@ -32,9 +34,9 @@ const logger = bunyan.createLogger({name: 'Task', level: 'debug'});
 
 require('../../config/tasks.json').forEach(item => {
     let task = new Task(item.name, item.code, item.weight, item.startTime, item.endTime);
-    logger.debug(task);
+    // logger.debug(task);
     byCode[task.code] = task;
     byName[task.name] = task;
 });;
 
-logger.info('loaded tasks', Task.allCodes(), Task.allNames());
+logger.info('loaded tasks', Task.allCodes().length, Task.allNames().length);
