@@ -1,10 +1,9 @@
 import { Specialty } from '../lib/Specialty';
 import {expect} from 'chai';
 
-describe.only('Specialty', function() {
-    it('should load all tasks from ../../config/tasks.json', function() {
-        // let task = Specialty.byCode('NEURO');
-        // expect(task.code).to.eq('NEURO');
-        new Specialty();
+describe('Specialty', function() {
+    it('should load all specialties from ../../config/specialties.json', function() {
+        let specialty = Specialty.byCode('NEURO');
+        expect(specialty.code).to.eq('NEURO');
     })
 });

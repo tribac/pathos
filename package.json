@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev-test-watch": "mocha-typescript-watch",
-    "pretest": "tsc --module commonjs --target ES2015 --outDir dist src/test/*.ts",
+    "pretes_": "tsc",
     "test": "mocha"
   },
   "author": "",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
+    "bunyan": "^1.8.10",
     "csv-parse": "^1.2.0",
     "lodash": "^4.17.4",
     "ts-node": "^3.0.2",

@@ -1,7 +1,7 @@
 import { PersonName } from './PersonName';
 import * as bunyan from 'bunyan';
 
-export type ByInitials = {[initials: string]: Pathologist};
+export type ByInitials = {[initials: string]: Specialist};
 
 const byInitials: ByInitials = {};
 
@@ -9,7 +9,7 @@ const logger = bunyan.createLogger({name: 'Pathologist', level: 'debug'});
 
 // declare function pick<T, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K>;
 
-export class Pathologist {
+export class Specialist {
 
     public static allByInitials(): ByInitials {
         // return pick(byInitials, ...Object.keys(byInitials));
@@ -20,7 +20,7 @@ export class Pathologist {
         return result;
     }
 
-    public static byInitials(initials: string): Pathologist {
+    public static byInitials(initials: string): Specialist {
         return byInitials[initials];
     }
 
@@ -28,22 +28,22 @@ export class Pathologist {
         return Object.keys(byInitials);
     }
 
-    public static all(): Pathologist[] {
-        let result: Pathologist[] = [];
+    public static all(): Specialist[] {
+        let result: Specialist[] = [];
         Object.keys(byInitials).forEach(function(initials) {
             result.push(byInitials[initials]);
         });
         return result;
     }
 
-    constructor(public name: PersonName, public tasks: string[] = []) {
+    constructor(public name: PersonName, public specialties: string[] = []) {
     }
 }
 
-require('../../config/pathologists.json').forEach(item => {
-    let pathologist = new Pathologist(new PersonName(item.name.given, item.name.family));
-    logger.debug(pathologist.name.initials);
-    byInitials[pathologist.name.initials] = pathologist;
+require('../../config/specialists.json').forEach(item => {
+    let specialist = new Specialist(new PersonName(item.name.given, item.name.family));
+    logger.debug(specialist.name.initials);
+    byInitials[specialist.name.initials] = specialist;
 });
 
-logger.info('loaded pathologists', Pathologist.allInitials().sort());
+logger.info('loaded specialists', Specialist.allInitials().sort());
