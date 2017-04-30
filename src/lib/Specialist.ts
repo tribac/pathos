@@ -5,7 +5,7 @@ export type ByInitials = {[initials: string]: Specialist};
 
 const byInitials: ByInitials = {};
 
-const logger = bunyan.createLogger({name: 'Pathologist', level: 'debug'});
+const logger = bunyan.createLogger({name: 'Specialist', level: 'debug'});
 
 // declare function pick<T, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K>;
 

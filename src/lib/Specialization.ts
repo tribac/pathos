@@ -4,12 +4,12 @@ import * as bunyan from 'bunyan';
 
 const logger = bunyan.createLogger({name: 'Specialty', level: 'debug'});
 
-export type PathologistBySpecialtyCode = {[specialtyCode: string]: Specialist[]};
+export type SpecialistBySpecialtyCode = {[specialtyCode: string]: Specialist[]};
 
-const bySpecialty: PathologistBySpecialtyCode = {};
+const bySpecialty: SpecialistBySpecialtyCode = {};
 
 export class Specialization {
-    // constructor(public specialist: Pathologist,
+    // constructor(public specialist: Specialist,
     //             public specialty: Specialty) {
     //     specialist.specialties.push(specialty);
     // }
@@ -17,7 +17,7 @@ export class Specialization {
 
 require('../../config/horaire.json').forEach(item => {
     let specialtyName = item['TÂCHE'];
-    let specialistInitials: string[] = item['Pathologistes'].split(',');
+    let specialistInitials: string[] = item['Specialistes'].split(',');
     if (!specialistInitials) {
         logger.warn('no initials for specialty: ' + specialtyName);
         return;
