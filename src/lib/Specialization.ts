@@ -9,48 +9,48 @@ export type PathologistBySpecialtyCode = {[specialtyCode: string]: Specialist[]}
 const bySpecialty: PathologistBySpecialtyCode = {};
 
 export class Specialization {
-    // constructor(public pathologist: Pathologist,
+    // constructor(public specialist: Pathologist,
     //             public specialty: Specialty) {
-    //     pathologist.specialties.push(specialty);
+    //     specialist.specialties.push(specialty);
     // }
 }
 
 require('../../config/horaire.json').forEach(item => {
     let specialtyName = item['TÂCHE'];
-    let pathologistInitials: string[] = item['Pathologistes'].split(',');
-    if (!pathologistInitials) {
+    let specialistInitials: string[] = item['Pathologistes'].split(',');
+    if (!specialistInitials) {
         logger.warn('no initials for specialty: ' + specialtyName);
         return;
     }
-    logger.debug('pathologistInitials', pathologistInitials);
+    logger.debug('specialistInitials', specialistInitials);
 
-    let pathologists: ByInitials = {};
+    let specialists: ByInitials = {};
     let initialsToRemove: string[] = [];
-    pathologistInitials.forEach(initials => {
+    specialistInitials.forEach(initials => {
         initials = initials.trim();
         // logger.debug('initials', initials);
         if (initials.startsWith('-')) {
             initialsToRemove.push(initials.slice(1));
         } else {
-            let pathologist = Specialist.byInitials(initials);
-            if (pathologist) {
-                pathologists[initials] = pathologist;
+            let specialist = Specialist.byInitials(initials);
+            if (specialist) {
+                specialists[initials] = specialist;
             }
         }
     });
 
     if (initialsToRemove.length > 0) {
-        let initialsToKeep = Object.keys(pathologists);
+        let initialsToKeep = Object.keys(specialists);
         if (initialsToKeep.length > 0) {
             logger.warn(`will process non-negated ${initialsToKeep} as removal`);
             initialsToRemove.push(...initialsToKeep);
         }
         logger.debug('initialsToRemove', initialsToRemove);
-        pathologists = Specialist.allByInitials();
+        specialists = Specialist.allByInitials();
     
         initialsToRemove.forEach(initials => {
             // logger.debug('removing initials: ' + initials);
-            delete pathologists[initials];
+            delete specialists[initials];
         });
     }
 
@@ -59,18 +59,18 @@ require('../../config/horaire.json').forEach(item => {
         logger.warn(specialtyName, 'not found');
         return;
     }
-    Object.keys(pathologists).forEach(initials => {
-        let pathologist = pathologists[initials];
-        pathologist.specialties.push(specialty.name);
-        specialty.pathologists.push(pathologist.name.initials);
+    Object.keys(specialists).forEach(initials => {
+        let specialist = specialists[initials];
+        specialist.specialties.push(specialty.name);
+        specialty.specialists.push(specialist.name.initials);
         if (!bySpecialty[specialty.code]) {
             bySpecialty[specialty.code] = [];
         }
-        bySpecialty[specialty.code].push(pathologist);
+        bySpecialty[specialty.code].push(specialist);
     });
 
-    // logger.info(pathologists);
-    // logger.info(Object.keys(pathologists).length);
+    // logger.info(specialists);
+    // logger.info(Object.keys(specialists).length);
 
     // logger.info(specialty);
 });

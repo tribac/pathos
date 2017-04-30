@@ -20,7 +20,7 @@ export class Specialty {
         return Object.keys(byName);
     }
 
-    public pathologists: string[] = [];
+    public specialists: string[] = [];
 
     constructor(public name: string,
                 public code: string,

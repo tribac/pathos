@@ -5,10 +5,10 @@ import * as bunyan from 'bunyan';
 const logger = bunyan.createLogger({name: 'ScheduleSpec', level: 'debug'});
 
 describe.only('ScheduleSpec', function() {
-    it('Number of pathologists by specialty', function() {
+    it('Number of specialists by specialty', function() {
         Specialty.allNames().forEach(function(name) {
             let specialty = Specialty.byName(name);
-            logger.info(name, specialty.pathologists);
+            logger.info(name, specialty.specialists);
         });
     });
 });
