@@ -5,7 +5,7 @@ import { Specialist } from "../lib/Specialist";
 describe('Specialist', function() {
     before(function() {
     });
-    it.skip('should load "../../config/pathlogists.json"', function() {
+    it.skip('should load "../../config/specialists.json"', function() {
         let all: Specialist[] = require('../../config/specialists.json');
         console.log(JSON.stringify(all));
         console.log(all[0].name);
