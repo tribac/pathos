@@ -10,7 +10,7 @@
         "target": "ES2015",
         "outDir": "dist",
         "strictNullChecks": true,
-        "watch": true
+        "watch": false
     },
     "include": [
         "src/**/*.ts"
