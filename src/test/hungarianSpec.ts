@@ -83,9 +83,9 @@ describe('Hungarian', function() {
     });
 
     [munkres, hungarian].forEach(function(algorithm) {
-        describe.only(`${algorithm.name}`, function() {
+        describe(`${algorithm.name}`, function() {
             it('count of specialists by task X count of specialties of specialist', function() {
-                let results = hungarian(matrix);
+                let results = algorithm(matrix);
                 console.log('result', results.length, results);
                 let i = -1;
                 let otherSpecialties: string[] = [];
